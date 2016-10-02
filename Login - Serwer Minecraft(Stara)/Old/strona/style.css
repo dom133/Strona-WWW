@@ -1,0 +1,57 @@
+p {
+	font-size: 22px;
+}
+
+		.wrapper { width: 1024px; margin: 0 auto;}
+		.head-bar { height: 40px; background: #1e1e1e url(http://www.skymin.xaa.pl/img/head-bar-background.png) repeat-x; border-bottom: 1px solid #353535; }
+		ul.menu { list-style: none; margin: 0; padding: 0; }
+		ul.menu li { margin-left: 10px; display: inline-block; vertical-align: top; }
+		ul.menu a:link,ul.menu a:visited { 
+			background: url(http://www.skymin.xaa.pl/img/menu-item-background.png) repeat-x; color: #C0C0C0; 
+			height: 39px; line-height: 39px; padding: 0 20px; display: block; border-left: 1px solid #20201f; 
+			border-right: 1px solid #20201f; text-shadow: 0 -1px 0 #000; -webkit-transition: 300ms all; 
+			-moz-transition: 300ms all; -o-transition: 300ms all; transition: 300ms all;	 
+			text-decoration: none; font-size: 9pt; }
+		ul.menu a:hover { background: url(http://www.skymin.xaa.pl/img/menu-item-hover-background.png) repeat-x; 
+			color: #A0A0A0; border-left: 1px solid #303030; border-right: 1px solid #303030; }
+			
+		@font-face {
+			font-family: 'Minecraft_PL';
+			src: local('Minecraft PL Font'),
+			url('http://skymin.xaa.pl/img/minecraft_font.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		
+		p {
+			font-family: 'Minecraft_PL';
+		}
+		
+		h1 {
+			font-family: 'Minecraft_PL';
+		}
+		
+		h2 {
+			font-family: 'Minecraft_PL';
+		}
+		
+		h3 {
+			font-family: 'Minecraft_PL';
+		}
+		
+		h4 {
+			font-family: 'Minecraft_PL';
+		}
+
+		h5 {
+			font-family: 'Minecraft_PL';
+		}
+		
+		h6 {
+			font-family: 'Minecraft_PL';
+		}		
+		/* <![CDATA[ */
+		td { 
+			font-family: 'Minecraft_PL';
+		}
+				

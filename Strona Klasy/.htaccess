@@ -1,0 +1,17 @@
+### PROTECT FILES ###
+<FilesMatch "\.(htaccess|htpasswd|ini|fla|psd|log|sh)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+
+RewriteEngine on
+
+RewriteRule zaloguj index.php?action=logowanie
+RewriteRule zarejestruj index.php?action=rejestracja
+RewriteRule edycja index.php?action=edycja
+RewriteRule profil index.php?action=profil
+RewriteRule forum index.php?action=forum
+RewriteRule statystyki index.php?action=statystyki
+RewriteRule launcher index.php?action=launcher
+
+AddHandler application/x-httpd-php55 .php #wersja_php_generowane_automatycznie

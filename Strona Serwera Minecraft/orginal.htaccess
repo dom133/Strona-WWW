@@ -1,0 +1,22 @@
+
+RewriteEngine on
+
+RewriteCond %{HTTP_REFERER} !^http://m.skymin.xaa.pl/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://m.skymin.xaa.pl$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://skymin.xaa.pl/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://skymin.xaa.pl$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.m.skymin.xaa.pl/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.m.skymin.xaa.pl$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.skymin.xaa.pl/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.skymin.xaa.pl$      [NC]
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
+
+RewriteCond %{HTTP_HOST} ^skymin\.xaa\.pl$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.skymin\.xaa\.pl$
+RewriteRule ^mobile\/?$ "http\:\/\/www\.m\.skymin\.xaa\.pl\/" [R=301,L]
+
+AddHandler application/x-httpd-php52 .php #wersja_php_generowane_automatycznie
+RewriteCond %{HTTP_HOST} ^mc\.skymin\.pl$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.mc\.skymin\.pl$
+RewriteRule ^/?$ "46\.29\.19\.168" [R=301,L]
+
