@@ -38,12 +38,12 @@
                         else {echo "<tr class=\"success\" data-toggle=\"modal\" data-target=\"#myModal\" onclick=\"show_modal('".$row[4]."', '".$row[5]."', '".$row[1]."')\">";}
                         if($row[1]==0){echo '<td><b>[BUG]</b>'.$row[4].'</td>';}
                         else echo '<td><b>[PROPOZYCJA]</b>'.$row[4].'</td>';
-                        if($row[3]==null | $row[3]=="null") {echo '<td>Nie podano</td>';}
-                        else {echo '<td>'.$row[3].'</td>';}
+                        if($row[3]==null | $row[3]=="null") {echo '<td><b>Nie podano</b></td>';}
+                        else {echo '<td><b>'.$row[3].'</b></td>';}
 
-                        echo '<td>'.$row[6].'</td>';
-                        echo '<td>'.$row[7].'</td>';
-                        echo '<td>'.$row[8].'</td>';
+                        echo '<td><b>'.$row[6].'</b></td>';
+                        echo '<td><b>'.$row[7].'</b></td>';
+                        echo '<td><b>'.$row[8].'</b></td>';
                         echo '</tr>';
                     }
                 ?>

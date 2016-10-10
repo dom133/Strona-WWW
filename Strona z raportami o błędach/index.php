@@ -27,10 +27,10 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-left">
-                <li class="active" id="home"><a href="index.php">Strona Główna</a></li>
-                <li id="add"><a href="/dodaj" >Dodaj błąd lub porpozycję</a></li>
-                <li><a href="https://github.com/dom133/Updater-Android">Github</a></li>
-                <li><a href="http://app-updater.pl:8080">Jenkins</a></li>
+                  <li class="active" id="home"><a href="index.php"><b>Strona Główna</b></a></li>
+                  <li id="add"><a href="/dodaj" ><b>Dodaj błąd lub porpozycję</b></a></li>
+                  <li><a href="https://github.com/dom133/Updater-Android"><b>Github</b></a></li>
+                  <li><a href="http://app-updater.pl:8080"><b>Jenkins</b></a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
