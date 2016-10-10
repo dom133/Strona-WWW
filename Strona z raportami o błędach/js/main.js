@@ -9,8 +9,11 @@ function view(id) {
     window.location.href = "index.php?action=zobacz&id="+id;
 }
 
-function show_modal(title, content) {
-    document.getElementById("ModalTitle").innerHTML = title;
+function show_modal(title, content, type) {
+    var title2;
+    if(type==0) {title2 = "<b>[BUG]</b>"+title;}
+    else {title2 = "<b>[PROPOZYCJA]</b>"+title;}
+    document.getElementById("ModalTitle").innerHTML = title2;
     document.getElementById("ModalContent").innerHTML = "<p>"+content+"</p>";
 }
 

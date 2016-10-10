@@ -34,10 +34,10 @@
                     $result = mysqli_query($conn, $query); 
 
                     while($row = mysqli_fetch_row($result)) {
-                        if($row[9]=="true"){echo "<tr class=\"danger\" data-toggle=\"modal\" data-target=\"#myModal\" onclick=\"show_modal('".$row[4]."', '".$row[5]."')\">";}
-                        else {echo "<tr class=\"success\" data-toggle=\"modal\" data-target=\"#myModal\" onclick=\"show_modal('".$row[4]."', '".$row[5]."')\">";}
-                        if($row[1]==0){echo '<td>[BUG]'.$row[4].'</td>';}
-                        else echo '<td>[PROPOZYCJA]'.$row[4].'</td>';
+                        if($row[9]=="true"){echo "<tr class=\"danger\" data-toggle=\"modal\" data-target=\"#myModal\" onclick=\"show_modal('".$row[4]."', '".$row[5]."', '".$row[1]."')\">";}
+                        else {echo "<tr class=\"success\" data-toggle=\"modal\" data-target=\"#myModal\" onclick=\"show_modal('".$row[4]."', '".$row[5]."', '".$row[1]."')\">";}
+                        if($row[1]==0){echo '<td><b>[BUG]</b>'.$row[4].'</td>';}
+                        else echo '<td><b>[PROPOZYCJA]</b>'.$row[4].'</td>';
                         if($row[3]==null | $row[3]=="null") {echo '<td>Nie podano</td>';}
                         else {echo '<td>'.$row[3].'</td>';}
 
