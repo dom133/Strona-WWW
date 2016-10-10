@@ -32,6 +32,9 @@ $formularz = '<form action="dodaj" class="form-horizontal container" method="pos
                 <option value="1.2.12">1.2.12</option>
                 <option value="1.2.13">1.2.13</option>
                 <option value="1.2.14">1.2.14</option>
+                <option value="1.2.15">1.2.15</option>
+                <option value="1.2.16">1.2.16</option>
+                <option value="1.2.17">1.2.17</option>
             </select>
         </div>
     </div>
