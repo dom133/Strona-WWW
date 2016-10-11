@@ -1,6 +1,6 @@
 <?php
-	$conn = mysqli_connect ("localhost", "strona", "Pawelek1") or
+	$conn = mysqli_connect ("", "", "") or
 	die ("Nie można połączyć się z bazą danych");
-	mysqli_select_db ($conn, "strona") or
+	mysqli_select_db ($conn, "") or
 	die ("Nie można połączyć się z bazą danych");
 ?>
