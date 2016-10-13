@@ -51,11 +51,6 @@
                     include '';
                     break;
                 }
-                
-                case 'zobacz': {
-                    include 'includes/view.php';
-                    break;
-                }
                     
                 default: {
                     include 'includes/glowna.php';
