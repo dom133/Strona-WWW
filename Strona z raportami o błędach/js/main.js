@@ -5,10 +5,6 @@ function add_error(id) {
     document.getElementById(id).innerHTML = html+'<span class="glyphicon glyphicon-remove form-control-feedback"></span>';
 }
 
-function view(id) {
-    window.location.href = "index.php?action=zobacz&id="+id;
-}
-
 function show_modal(title, content, type) {
     var title2;
     if(type==0) {title2 = "<b>[BUG]</b>"+title;}
@@ -35,4 +31,35 @@ function alerts(id, text, n_alert)
 	{
 		document.getElementById(id).innerHTML = "<div class=\"alert alert-danger alert-dismissable\"><button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>"+text+"</div>";
 	}
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+    }
+    return "";
+}
+
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+	if(exdays!=null)
+	{
+    	d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    	var expires = "expires="+d.toUTCString();
+	} else {
+		var expires = "expires=0";
+	}
+    document.cookie = cname + "=" + cvalue + "; " + expires+"; patch=/";
+}
+
+function del_Cookie(name) {
+    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+
+function changeValue(name, value){
+    document.getElementById(name).value = value;
 }

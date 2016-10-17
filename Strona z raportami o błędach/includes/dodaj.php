@@ -2,6 +2,24 @@
 <?php
 date_default_timezone_set("Europe\Warsaw");
 
+include 'mail.php';
+
+function GenRandom($howlong) 
+{ 
+	$chars = "abcdefghijklmnoprstuwxyzq"; 
+	$chars .= "ABCDEFGHIJKLMNOPRSTUWZYXQ"; 
+	$chars .= "1234567890"; 
+	$pass = ""; 
+	$len = strlen($chars) - 1; 
+	$output = "";
+	for($i =0; $i < $howlong; $i++) 
+	{ 
+		$random = rand(0, $len); 
+		$output .=  $chars[$random]; 
+	} 
+	return $output; 
+}; 
+
 $formularz = '<form action="dodaj" class="form-horizontal container" method="post">
     <div class="form-group">
         <label for="type" class="col-sm-2 control-label">Typ zgłoszenia: </label>
@@ -37,7 +55,8 @@ $formularz = '<form action="dodaj" class="form-horizontal container" method="pos
                 <option value="1.2.17">1.2.17</option>
                 <option value="1.2.18">1.2.18</option>
                 <option value="1.2.19">1.2.19</option>
-                
+                <option value="1.2.20">1.2.20</option>
+                <option value="1.2.21">1.2.21</option>
             </select>
         </div>
     </div>
@@ -67,6 +86,7 @@ $formularz = '<form action="dodaj" class="form-horizontal container" method="pos
     </div>
     <input type="submit" name="dodaj" value="Dodaj" class="btn btn-success btn-lg btn-block">
 </form>';   
+
 if(!empty($_POST['dodaj'])) {
     $nick = addslashes(htmlspecialchars($_POST['nick']));
     $email = addslashes(htmlspecialchars($_POST['email']));
@@ -87,10 +107,16 @@ if(!empty($_POST['dodaj'])) {
         $date = date('d.m.Y');
         $time = date('H:i');
         $version = $_POST['version'];
+        $authKey = GenRandom(50);
 
-        $result = mysqli_query($conn ,"INSERT INTO raporty(type, nick, email, title, contents, date, time, version, enabled, source) VALUES('$type', '$nick', '$email', '$title', '$contents', '$date', '$time', '$version', 'true', 'web')"); 
+        $result = mysqli_query($conn ,"INSERT INTO raporty(type, nick, email, title, contents, date, time, version, enabled, source, authKey) VALUES('$type', '$nick', '$email', '$title', '$contents', '$date', '$time', '$version', 'true', 'web', '$authKey')"); 
+        
+        $wiadomosc = '<html><head><meta charset="utf-8"></head><body><p><b>Witaj,
+Dziekujemy ze zgloszenie, aby edytowac zgloszenie wejdz na <a href="http://app-updater.pl/?action=edit&key='.$authKey.'">http://app-updater.pl/?action=edit&key='.$authKey.'</a></b></p>
+</body></html>';
         
         if($result) {
+            $error = sendMail($email, "Zgłoszenie na App-updater", $wiadomosc);
             echo '<script type="text/javascript">alerts("message", "Poprawnie przyjęto zgłoszenie", "success");</script>'; 
         } else {
             echo '<script type="text/javascript">alerts("message", "Wystąpił błąd podczas dodawania zgłoszenia, spróbuj ponownie", "danger");</script>';

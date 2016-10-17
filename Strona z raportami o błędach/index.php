@@ -26,12 +26,16 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <ul class="nav navbar-nav navbar-left">
-                  <li class="active" id="home"><a href="index.php"><b>Strona Główna</b></a></li>
-                  <li id="add"><a href="/dodaj" ><b>Dodaj błąd lub porpozycję</b></a></li>
-                  <li><a href="https://github.com/dom133/Updater-Android"><b>Github</b></a></li>
-                  <li><a href="http://app-updater.pl:8080"><b>Jenkins</b></a></li>
-              </ul>
+                <ul class="nav navbar-nav navbar-left">
+                    <li class="active" id="home"><a href="/"><b>Strona Główna</b></a></li>
+                    <li id="add"><a href="dodaj" ><b>Dodaj błąd lub porpozycję</b></a></li>
+                    <li><a href="https://github.com/dom133/Updater-Android"><b>Github</b></a></li>
+                    <li><a href="http://app-updater.pl:8080"><b>Jenkins</b></a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <div id="login_form">
+                    </div>
+                </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>   
@@ -48,15 +52,21 @@
                 
                 case 'dodaj': {
                     include 'includes/dodaj.php';
-                    include '';
                     break;
                 }
+                
+                case 'edit': {
+                    include 'includes/edycja.php';
+                    break;
+                }    
                     
                 default: {
                     include 'includes/glowna.php';
                     break;
                 }
             }
+        
+
         ?> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
