@@ -61,6 +61,15 @@ $formularz = '<form action="dodaj" class="form-horizontal container" method="pos
         </div>
     </div>
     <div class="form-group">
+        <label for="os" class="col-sm-2 control-label">Wersja systemu: </label>
+        <div class="col-sm-10">
+            <select id="os" name="os" class="form-control">
+                <option value="CM13">CM13</option>
+                <option value="CM14">CM14</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
         <label for="email" class="col-sm-2 control-label">Email: </label>
         <div id="email_div" class="col-sm-10">
             <input type="email" class="form-control" name="email" placeholder="Email">
@@ -107,9 +116,10 @@ if(!empty($_POST['dodaj'])) {
         $date = date('d.m.Y');
         $time = date('H:i');
         $version = $_POST['version'];
+        $os = $_POST['os'];
         $authKey = GenRandom(50);
 
-        $result = mysqli_query($conn ,"INSERT INTO raporty(type, nick, email, title, contents, date, time, version, enabled, source, authKey) VALUES('$type', '$nick', '$email', '$title', '$contents', '$date', '$time', '$version', 'true', 'web', '$authKey')"); 
+        $result = mysqli_query($conn ,"INSERT INTO raporty(type, nick, email, title, contents, date, time, version, os, enabled, source, authKey) VALUES('$type', '$nick', '$email', '$title', '$contents', '$date', '$time', '$version', '$os', 'true', 'web', '$authKey')"); 
         
         $wiadomosc = '<html><head><meta charset="utf-8"></head><body><p><b>Witaj,
 Dziekujemy ze zgloszenie, aby edytowac zgloszenie wejdz na <a href="http://app-updater.pl/?action=edit&key='.$authKey.'">http://app-updater.pl/?action=edit&key='.$authKey.'</a></b></p>

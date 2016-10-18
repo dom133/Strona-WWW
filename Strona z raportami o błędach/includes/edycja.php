@@ -44,6 +44,15 @@ $formularz = '<form action="?action=edit&key='.$key.'" class="form-horizontal co
         </div>
     </div>
     <div class="form-group">
+        <label for="os" class="col-sm-2 control-label">Wersja systemu: </label>
+        <div class="col-sm-10">
+            <select id="os" name="os" class="form-control">
+                <option value="CM13">CM13</option>
+                <option value="CM14">CM14</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
         <label for="title" class="col-sm-2 control-label">Tytuł: </label>
         <div id="title_div" class="col-sm-10">
             <input type="text" class="form-control" id="title" name="title" placeholder="Tytuł">
@@ -75,8 +84,9 @@ if(!empty($_POST['edycja'])) {
         $date = date('d.m.Y');
         $time = date('H:i');
         $version = $_POST['version'];
+        $os = $_POST['os'];
 
-        $result = mysqli_query($conn ,"UPDATE `raporty` SET `type` = '$type', `title` = '$title', `contents` = '$contents', `version` = '$version', `date` = '$date', `time` = '$time' WHERE `authKey` = '$key'"); 
+        $result = mysqli_query($conn ,"UPDATE `raporty` SET `type` = '$type', `title` = '$title', `contents` = '$contents', `version` = '$version', `os` = '$os', `date` = '$date', `time` = '$time' WHERE `authKey` = '$key'"); 
 
         if($result) {
             echo '<script type="text/javascript">alerts("message", "Poprawnie edytowano zgłoszenie", "success");</script>'; 
@@ -99,7 +109,7 @@ if(!empty($_POST['edycja'])) {
         $row = mysqli_fetch_row($zapytanie);
         if(mysqli_num_rows($zapytanie)!=0) {
             echo $formularz;
-            echo '<script type="text/javascript">changeValue("type", "'.$row[1].'");changeValue("version", "'.$row[8].'");changeValue("title", "'.$row[4].'");changeValue("contents", "'.$row[5].'");</script>';
+            echo '<script type="text/javascript">changeValue("type", "'.$row[1].'");changeValue("version", "'.$row[8].'");changeValue("os", "'.$row[9].'");changeValue("title", "'.$row[4].'");changeValue("contents", "'.$row[5].'");</script>';
         } else {echo '<script type="text/javascript">alerts("message", "Nie prawidłowy klucz!!!", "danger")</script>';include 'includes/glowna.php';}
     } else {echo '<script type="text/javascript">alerts("message", "Nie prawidłowy adres url!!!", "danger")</script>';include 'includes/glowna.php';}
 }

@@ -37,7 +37,7 @@ if (isset($_POST['type']) && isset($_POST['nick']) && isset($_POST['email']) && 
     $authKey = GenRandom(50);
  
     include 'mysql.php';
-    $result = mysqli_query($conn ,"INSERT INTO raporty(type, nick, email, title, contents, date, time, version, enabled, source, authKey) VALUES('$type', '$nick', '$email', '$title', '$contents', '$date', '$time', '$version', 'true', 'app', '$authKey')");
+    $result = mysqli_query($conn ,"INSERT INTO raporty(type, nick, email, title, contents, date, time, version, os, enabled, source, authKey) VALUES('$type', '$nick', '$email', '$title', '$contents', '$date', '$time', '$version', 'CM13', 'true', 'app', '$authKey')");
     
     $wiadomosc = '<html><head><meta charset="utf-8"></head><body><p><b>Witaj,
 Dziekujemy ze zgloszenie, aby edytowac zgloszenie wejdz na <a href="http://app-updater.pl/?action=edit&key='.$authKey.'">http://app-updater.pl/?action=edit&key='.$authKey.'</a></b></p>

@@ -26,6 +26,8 @@
                         <th>Data dodania</th>
                         <th>Godzina dodania</th>
                         <th>Wersja</th>
+                        <th>Wersja systemu</th>
+                        <th>Źródło dodania</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,7 +36,7 @@
                     $result = mysqli_query($conn, $query); 
 
                     while($row = mysqli_fetch_row($result)) {
-                        if($row[9]=="true"){echo "<tr class=\"danger\" data-toggle=\"modal\" data-target=\"#myModal\" onclick=\"show_modal('".$row[4]."', '".$row[5]."', '".$row[1]."')\">";}
+                        if($row[10]=="true"){echo "<tr class=\"danger\" data-toggle=\"modal\" data-target=\"#myModal\" onclick=\"show_modal('".$row[4]."', '".$row[5]."', '".$row[1]."')\">";}
                         else {echo "<tr class=\"success\" data-toggle=\"modal\" data-target=\"#myModal\" onclick=\"show_modal('".$row[4]."', '".$row[5]."', '".$row[1]."')\">";}
                         if($row[1]==0){echo '<td><b>[BUG]</b>'.$row[4].'</td>';}
                         else echo '<td><b>[PROPOZYCJA]</b>'.$row[4].'</td>';
@@ -44,6 +46,8 @@
                         echo '<td><b>'.$row[6].'</b></td>';
                         echo '<td><b>'.$row[7].'</b></td>';
                         echo '<td><b>'.$row[8].'</b></td>';
+                        echo '<td><b>'.$row[9].'</b></td>';
+                        echo '<td><b>'.$row[11].'</b></td>';
                         echo '</tr>';
                     }
                 ?>
