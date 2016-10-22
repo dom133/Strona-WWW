@@ -17,6 +17,7 @@ $formularz = '<form action="?action=edit&key='.$key.'" class="form-horizontal co
         <label for="version" class="col-sm-2 control-label">Wersja aplikacji: </label>
         <div class="col-sm-10">
             <select id="version" name="version" class="form-control">
+                <option value="Nie dotyczy">Nie dotyczy</option>
                 <option value="1.1">1.1</option>
                 <option value="1.2.0">1.2.0</option>
                 <option value="1.2.1">1.2.1</option>
@@ -40,6 +41,9 @@ $formularz = '<form action="?action=edit&key='.$key.'" class="form-horizontal co
                 <option value="1.2.19">1.2.19</option>
                 <option value="1.2.20">1.2.20</option>
                 <option value="1.2.21">1.2.21</option>
+                <option value="1.2.22">1.2.22</option>
+                <option value="1.2.23">1.2.23</option>
+                <option value="1.2.24">1.2.24</option>
             </select>
         </div>
     </div>
@@ -47,6 +51,7 @@ $formularz = '<form action="?action=edit&key='.$key.'" class="form-horizontal co
         <label for="os" class="col-sm-2 control-label">Wersja systemu: </label>
         <div class="col-sm-10">
             <select id="os" name="os" class="form-control">
+                <option value="Nie dotyczy">Nie dotyczy</option>
                 <option value="CM13">CM13</option>
                 <option value="CM14">CM14</option>
             </select>

@@ -1,4 +1,4 @@
-<script type="text/javascript">document.getElementById("home").classList.add("active");document.getElementById("add").classList.remove("active");</script>
+<script type="text/javascript">document.getElementById("home").classList.add("active");document.getElementById("add").classList.remove("active");document.getElementById("cm").classList.remove("active");</script>
 <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -25,7 +25,7 @@
                         <th>Autor</th>
                         <th>Data dodania</th>
                         <th>Godzina dodania</th>
-                        <th>Wersja</th>
+                        <th>Wersja aplikacji</th>
                         <th>Wersja systemu</th>
                         <th>Źródło dodania</th>
                     </tr>
