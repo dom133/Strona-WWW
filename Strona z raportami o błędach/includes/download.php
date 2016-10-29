@@ -19,9 +19,13 @@
                             switch($i) {
                                 case 0: {$i++;break;}
                                 case 1: {$date = $line; $i++; break;}
-                                case 2: {$cm = $line; $i++; break;}
-                                case 3: {echo '<tr class="success"><td><b>Data kompilacji: '.$date.'</b></td><td></td></tr><tr class="success"><td><b><i>'.$cm.'-'.$date.'-NIGHTLY-w5.zip</i></b></td><td><a href="'.$line.'">'.$line.'</a></td></tr>'; $i++; break;}
-                                case 4: {echo '<tr class="success"><td><b><i>'.$cm.'-'.$date.'-NIGHTLY-w5.zip.md5</i></b></td><td><a href="'.$line.'">'.$line.'</a></td></tr>'; $i=0; break;}
+                                case 2: {$cm="cm-13.0";/*$cm = $line;*/ $i++; break;}
+                                case 3: {    
+                                    echo '<tr class="success"><td><b>Data kompilacji: '.$date.'</b></td><td></td></tr><tr class="success"><td><b><i>'.$cm.'-'.$date.'-NIGHTLY-w55n.zip</i></b></td><td><a href="'.$line.'">'.$line.'</a></td></tr>'; 
+                                    $i++; 
+                                    break;
+                                }
+                                case 4: {echo '<tr class="success"><td><b><i>'.$cm.'-'.$date.'-NIGHTLY-w55n.zip.md5</i></b></td><td><a href="'.$line.'">'.$line.'</a></td></tr>'; $i=0; break;}
                             }
                         }
                         

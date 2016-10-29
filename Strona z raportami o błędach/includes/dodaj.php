@@ -134,7 +134,7 @@ Dziekujemy ze zgloszenie, aby edytowac zgloszenie wejdz na <a href="http://app-u
             $error = sendMail($email, "Zgłoszenie na App-updater", $wiadomosc);
             echo '<script type="text/javascript">alerts("message", "Poprawnie przyjęto zgłoszenie", "success");</script>'; 
         } else {
-            echo '<script type="text/javascript">alerts("message", "Wystąpił błąd podczas dodawania zgłoszenia, spróbuj ponownie", "danger");</script>';
+            echo '<script type="text/javascript">alerts("message", "Wystąpił błąd podczas dodawania zgłoszenia, spróbuj ponownie: '.mysqli_error($conn).' ", "danger");</script>';
         }
         echo $formularz;
         

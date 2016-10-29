@@ -113,8 +113,10 @@ if(!empty($_POST['edycja'])) {
         $zapytanie = mysqli_query($conn, "SELECT * FROM `raporty` WHERE `authKey` = '$key'");
         $row = mysqli_fetch_row($zapytanie);
         if(mysqli_num_rows($zapytanie)!=0) {
-            echo $formularz;
-            echo '<script type="text/javascript">changeValue("type", "'.$row[1].'");changeValue("version", "'.$row[8].'");changeValue("os", "'.$row[9].'");changeValue("title", "'.$row[4].'");changeValue("contents", "'.$row[5].'");</script>';
+            if($row[10]=="true") {
+                echo $formularz;
+                echo '<script type="text/javascript">changeValue("type", "'.$row[1].'");changeValue("version", "'.$row[8].'");changeValue("os", "'.$row[9].'");changeValue("title", "'.$row[4].'");changeValue("contents", "'.$row[5].'");</script>';
+            } else {echo '<script type="text/javascript">alerts("message", "Zgłoszenie zostało zamknięte i nie można go edytować!!!", "danger")</script>';include 'includes/glowna.php';}
         } else {echo '<script type="text/javascript">alerts("message", "Nie prawidłowy klucz!!!", "danger")</script>';include 'includes/glowna.php';}
     } else {echo '<script type="text/javascript">alerts("message", "Nie prawidłowy adres url!!!", "danger")</script>';include 'includes/glowna.php';}
 }
