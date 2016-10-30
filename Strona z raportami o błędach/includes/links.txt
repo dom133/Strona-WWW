@@ -1,4 +1,14 @@
 -
+20161029
+cm13
+https://transfer.sh/GkZig/cm-13.0-20161029-nightly-w5.zip
+https://transfer.sh/nlRq2/cm-13.0-20161029-nightly-w5.zip.md5
+-
+20161027
+cm13
+https://transfer.sh/kT7Uq/cm-13.0-20161027-nightly-w5.zip
+https://transfer.sh/hyf9F/cm-13.0-20161027-nightly-w5.zip.md5
+-
 20161023
 cm13
 https://transfer.sh/CC5Is/cm-13.0-20161023-nightly-w5.zip

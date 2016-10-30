@@ -15,13 +15,14 @@
                     
                         $file = fopen("/var/www/html/includes/links.txt", "r")or exit("Unable to open file!");
                         while(!feof($file)){
-                            $line = fgets($file);
+                            $line = preg_replace('/\s+/', '', fgets($file));
                             switch($i) {
                                 case 0: {$i++;break;}
                                 case 1: {$date = $line; $i++; break;}
-                                case 2: {$cm="cm-13.0";/*$cm = $line;*/ $i++; break;}
+                                case 2: {$cm = $line; $i++; break;}
                                 case 3: {    
-                                    echo '<tr class="success"><td><b>Data kompilacji: '.$date.'</b></td><td></td></tr><tr class="success"><td><b><i>'.$cm.'-'.$date.'-NIGHTLY-w55n.zip</i></b></td><td><a href="'.$line.'">'.$line.'</a></td></tr>'; 
+                                    if($cm="cm13"){$cm="cm-13.0";}else if($cm="cm14"){$cm="cm-14.1";}
+                                    echo '<tr class="warning"><td><b>Data kompilacji: '.$date.'</b></td><td></td></tr><tr class="success"><td><b><i>'.$cm.'-'.$date.'-NIGHTLY-w55n.zip</i></b></td><td><a href="'.$line.'">'.$line.'</a></td></tr>'; 
                                     $i++; 
                                     break;
                                 }

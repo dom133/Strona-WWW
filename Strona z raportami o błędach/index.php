@@ -29,7 +29,13 @@
                 <ul class="nav navbar-nav navbar-left">
                     <li class="active" id="home"><a href="/"><b>Strona Główna</b></a></li>
                     <li id="add"><a href="dodaj" ><b>Dodaj błąd lub propozycję</b></a></li>
-                    <li id="cm"><a href="pobierz" ><b>Pobierz CM</b></a></li>
+                    <li id="cm" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Pobierz CM</b><span class="caret"></span></a>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="pobierz">CM13</a></li>
+                        <li><a href="pobierz">CM14</a></li>
+                      </ul>
+                    </li>
                     <li><a href="https://github.com/dom133/Updater-Android"><b>Github</b></a></li>
                     <li><a href="http://app-updater.pl:8080"><b>Jenkins</b></a></li>
                 </ul>
