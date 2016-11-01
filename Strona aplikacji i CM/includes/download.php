@@ -11,12 +11,13 @@ function showDownload($cm) {
         $line = preg_replace('/\s+/', '', fgets($file));
         switch($i) {
             case 0: {$i++;break;}
-            case 1: {$date = $line; $i++; break;}
+            case 1: {$date_org = $line; $i++; break;}
             case 2: {$cm_file = $line; $i++; break;}
             case 3: {    
                 if($cm_file==$cm) {
+                    $date = substr_replace($date_org, '-', 4, 0); $date = substr_replace($date, '-', 7, 0);
                     if($cm=="cm13"){$cm_org="cm-13.0";} else if($cm=="cm14"){$cm_org="cm-14.1";}
-                    echo '<tr class="warning"><td><b>Data kompilacji: '.$date.'</b></td><td></td></tr><tr class="success"><td><b><i>'.$cm_org.'-'.$date.'-NIGHTLY-w55n.zip</i></b></td><td><a href="'.$line.'">'.$line.'</a></td></tr>'; 
+                    echo '<tr class="warning"><td><b>Data kompilacji: '.$date.'</b></td><td></td></tr><tr class="success"><td><b><i>'.$cm_org.'-'.$date_org.'-NIGHTLY-w55n.zip</i></b></td><td><a href="'.$line.'">'.$line.'</a></td></tr>'; 
                 }
                 $i++; 
                 break;
@@ -24,7 +25,7 @@ function showDownload($cm) {
             case 4: {
                 if($cm_file==$cm) {
                     if($cm=="cm13"){$cm_org="cm-13.0";} else if($cm=="cm14"){$cm_org="cm-14.1";}
-                    echo '<tr class="success"><td><b><i>'.$cm_org.'-'.$date.'-NIGHTLY-w55n.zip.md5</i></b></td><td><a href="'.$line.'">'.$line.'</a></td></tr>'; 
+                    echo '<tr class="success"><td><b><i>'.$cm_org.'-'.$date_org.'-NIGHTLY-w55n.zip.md5</i></b></td><td><a href="'.$line.'">'.$line.'</a></td></tr>'; 
                 }
                 $i=0; 
                 break;
