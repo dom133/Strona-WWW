@@ -1,7 +1,8 @@
 <script type="text/javascript">document.getElementById("add").classList.remove("active");document.getElementById("home").classList.remove("active")</script>
 <?php
 
-$key = $_GET['key'];
+date_default_timezone_set("Europe/Warsaw");
+$key = isset($_GET['key']) ? $_GET['key'] : NULL;
 
 $formularz = '<form action="?action=edit&key='.$key.'" class="form-horizontal container" method="post">
     <div class="form-group">
@@ -46,6 +47,8 @@ $formularz = '<form action="?action=edit&key='.$key.'" class="form-horizontal co
                 <option value="1.2.24">1.2.24</option>
                 <option value="1.2.25">1.2.25</option>
                 <option value="1.2.26">1.2.26</option>
+                <option value="1.2.27">1.2.27</option>
+                <option value="1.2.28">1.2.28</option>
             </select>
         </div>
     </div>

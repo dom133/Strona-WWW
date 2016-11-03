@@ -1,12 +1,8 @@
 <?php
-date_default_timezone_set("Europe\Warsaw");
+date_default_timezone_set("Europe/Warsaw");
 $response = array();
 
-include 'mail.php'
-
-$wiadomosc = '<html><head><meta charset="utf-8"></head><body><p><b>Witaj,
-Dziekujemy ze zgloszenie, aby edytowac zgloszenie wejdz na <a href="http://app-updater.pl/?action=edit&key="></b></p>
-</body></html>';    
+include 'includes/mail.php';
     
 function GenRandom($howlong) 
 { 
@@ -34,20 +30,21 @@ if (isset($_POST['type']) && isset($_POST['nick']) && isset($_POST['email']) && 
     $date = date('d.m.Y');
     $time = date('H:i');
     $version = $_POST['version'];
+    if(isset($_POST['os'])) { $cm = addslashes(htmlspecialchars($_POST['os']));}
+    else { $cm='CM13'; }
     $authKey = GenRandom(50);
  
     include 'mysql.php';
-    $result = mysqli_query($conn ,"INSERT INTO raporty(type, nick, email, title, contents, date, time, version, os, enabled, source, authKey) VALUES('$type', '$nick', '$email', '$title', '$contents', '$date', '$time', '$version', 'CM13', 'true', 'app', '$authKey')");
+    $result = mysqli_query($conn ,"INSERT INTO raporty(type, nick, email, title, contents, date, time, version, os, enabled, source, authKey) VALUES('$type', '$nick', '$email', '$title', '$contents', '$date', '$time', '$version', '$cm', 'true', 'app', '$authKey')");
     
     $wiadomosc = '<html><head><meta charset="utf-8"></head><body><p><b>Witaj,
 Dziekujemy ze zgloszenie, aby edytowac zgloszenie wejdz na <a href="http://app-updater.pl/?action=edit&key='.$authKey.'">http://app-updater.pl/?action=edit&key='.$authKey.'</a></b></p>
 </body></html>';    
-    
-    
+     
     if ($result) {
         $response["success"] = 1;
         $response["message"] = "Poprawnie przyjeto zgloszenie!!!";
-        $error = sendMail($email, "Zgłoszenie na App-updater", $wiadomosc)
+        $error = sendMail($email, "Zgłoszenie na App-updater", $wiadomosc);
         echo json_encode($response);
     } else {
         $response["success"] = 0;

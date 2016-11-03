@@ -1,6 +1,6 @@
 <script type="text/javascript">document.getElementById("add").classList.add("active");document.getElementById("home").classList.remove("active");document.getElementById("cm").classList.remove("active");</script>
 <?php
-date_default_timezone_set("Europe\Warsaw");
+date_default_timezone_set("Europe/Warsaw");
 
 include 'mail.php';
 
@@ -63,6 +63,8 @@ $formularz = '<form action="dodaj" class="form-horizontal container" method="pos
                 <option value="1.2.24">1.2.24</option>
                 <option value="1.2.25">1.2.25</option>
                 <option value="1.2.26">1.2.26</option>
+                <option value="1.2.27">1.2.27</option>
+                <option value="1.2.28">1.2.28</option>
             </select>
         </div>
     </div>

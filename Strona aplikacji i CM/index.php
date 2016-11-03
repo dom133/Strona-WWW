@@ -61,7 +61,8 @@
         
         <?php
             include 'mysql.php';
-            switch($_GET['action']) {
+            $action = isset($_GET['action']) ? $_GET['action'] : NULL;
+            switch($action) {
                 case '': {
                     include 'includes/glowna.php';
                     break;
