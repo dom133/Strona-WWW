@@ -1,7 +1,7 @@
 <script type="text/javascript">document.getElementById("cm").classList.add("active");document.getElementById("add").classList.remove("active");document.getElementById("home").classList.remove("active");</script> 
 <?php
 function showDownload($cm) {
-    echo '<div class="table-responsive"><table class="table table-hover table-bordered"><thead><tr><th>Nazwa</th><th>URL</th></tr></thead><tbody>';
+    echo '<div class="table-responsive"><table class="table table-hover table-bordered"><tbody>';
     $i = 0; 
     $date = null;
     $cm_file = null; 

@@ -65,6 +65,7 @@ $formularz = '<form action="dodaj" class="form-horizontal container" method="pos
                 <option value="1.2.26">1.2.26</option>
                 <option value="1.2.27">1.2.27</option>
                 <option value="1.2.28">1.2.28</option>
+                <option value="1.3.0">1.3.0</option>
             </select>
         </div>
     </div>
