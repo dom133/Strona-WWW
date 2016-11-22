@@ -60,6 +60,10 @@
         <div id="message" style="margin-top:10px; margin-left:30px; margin-right:30px;"></div>
         
         <?php
+            if(!isset($_COOKIE['cookie'])) {
+                echo '<script type="text/javascript">alerts("message", "Nasza strona internetowa używa plików cookies (tzw. ciasteczka) w celach statystycznych, reklamowych oraz funkcjonalnych. Dzięki nim możemy indywidualnie dostosować stronę do twoich potrzeb. Każdy może zaakceptować pliki cookies albo ma możliwość wyłączenia ich w przeglądarce, dzięki czemu nie będą zbierane żadne informacje. <a href=\"http://ciasteczka.eu/#jak-wylaczyc-ciasteczka\">Dowiedz się więcej</a>", "info"); setCookie("cookie", "true", "365");</script>'; 
+            }
+        
             include 'mysql.php';
             $action = isset($_GET['action']) ? $_GET['action'] : NULL;
             switch($action) {
@@ -88,8 +92,6 @@
                     break;
                 }
             }
-        
-
         ?> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
