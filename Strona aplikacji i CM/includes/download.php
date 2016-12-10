@@ -38,9 +38,9 @@ function showDownload($cm) {
 
 $type = $_GET['type'];
 if($type=="cm13") {
+    echo '<script type="text/javascript">alerts("message", "Nightlies dla CM13 zostały wyłączone z powodu przeniesienia się na CM14.1", "info");</script>'; 
     showDownload('cm13');
 } else {
-    echo '<script type="text/javascript">alerts("message", "CM14.1 jest w trakcie tworzenia i nightlies nie zostały jeszcze wypuszczone", "info");</script>';    
-    include 'includes/glowna.php';
+    shwoDownload('cm14');   
 }
 ?>

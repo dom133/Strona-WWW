@@ -52,6 +52,7 @@ $formularz = '<form action="?action=edit&key='.$key.'" class="form-horizontal co
                 <option value="1.3.0">1.3.0</option>
                 <option value="1.3.1">1.3.1</option>
                 <option value="1.3.2">1.3.2</option>
+                <option value="1.3.3">1.3.3</option>
             </select>
         </div>
     </div>

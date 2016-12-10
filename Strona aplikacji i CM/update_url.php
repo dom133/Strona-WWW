@@ -44,4 +44,18 @@ $out = shell_exec('curl --upload-file /var/www/html/updates/zip/gapps.zip https:
 shell_exec('rm /var/www/html/updates/zip/gapps.zip');
 $out = preg_replace('/\s+/', '', $out);
 shell_exec('echo '.$out.' > /var/www/html/updates/txt/download_gapps-cm13.txt');
+
+$link = shell_exec('cat /var/www/html/updates/txt/download_link-cm14.1.txt'); $link = preg_replace('/\s+/', '', $link);
+shell_exec('wget '.$link.' -O /var/www/html/updates/zip/update-cm14.1.zip');
+$out = shell_exec('curl --upload-file /var/www/html/updates/zip/update-cm13.zip https://transfer.sh/update-cm14.1.zip');
+shell_exec('rm /var/www/html/updates/zip/update-cm14.1.zip');
+$out = preg_replace('/\s+/', '', $out);
+shell_exec('echo '.$out.' > /var/www/html/updates/txt/download_link-cm14.1.txt');
+
+$link = shell_exec('cat /var/www/html/updates/txt/download_gapps-cm14.1.txt'); $link = preg_replace('/\s+/', '', $link);
+shell_exec('wget '.$link.' -O /var/www/html/updates/zip/gapps_14.1.zip');
+$out = shell_exec('curl --upload-file /var/www/html/updates/zip/gapps.zip https://transfer.sh/gapps_14.1.zip');
+shell_exec('rm /var/www/html/updates/zip/gapps_14.1.zip');
+$out = preg_replace('/\s+/', '', $out);
+shell_exec('echo '.$out.' > /var/www/html/updates/txt/download_gapps-cm14.1.txt');
 ?>
