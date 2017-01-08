@@ -9,5 +9,6 @@ RewriteEngine on
 RewriteRule dodaj index.php?action=dodaj
 RewriteRule pobierz/cm13 index.php?action=download&type=cm13
 RewriteRule pobierz/cm14 index.php?action=download&type=cm14
+RewriteRule pobierz/lineage index.php?action=download&type=lineage
 
 AddHandler application/x-httpd-php55 .php #wersja_php_generowane_automatycznie

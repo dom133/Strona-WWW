@@ -1,7 +1,7 @@
 <html lang="pl_PL">
     <head>
         <meta charset="utf-8">
-        <title>Strona apikacji i CM dla LG L65</title>
+        <title>Strona apikacji i Rom'u dla LG L65</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -40,10 +40,11 @@
                     <li class="active" id="home"><a href="/"><b>Strona Główna</b></a></li>
                     <li id="add"><a href="dodaj" ><b>Dodaj błąd lub propozycję</b></a></li>
                     <li id="cm" class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Pobierz CM</b><span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Pobierz ROM</b><span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="/pobierz/cm13">CM13</a></li>
                             <li><a href="/pobierz/cm14">CM14.1</a></li>
+                            <li><a href="/pobierz/lineageos">Lineage OS</a></li>
                         </ul>
                     </li>
                     <li><a href="https://github.com/dom133/Updater-Android"><b>Github</b></a></li>

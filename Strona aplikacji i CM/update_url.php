@@ -11,7 +11,7 @@ while(!feof($file)){
         case 1: {$date = $line; $i++; break;}
         case 2: {$cm = $line; $i++; break;}
         case 3: {  
-            if($cm="cm13"){$cm="cm-13.0";}else if($cm="cm14"){$cm="cm-14.1";}
+            if($cm="cm13"){$cm="cm-13.0";}else if($cm="cm14"){$cm="cm-14.1";}else if($cm="lineage"){$cm="lineageos-14.1";}
             shell_exec('wget '.$line.' -O /var/www/html/updates/zip/'.$cm.'-'.$date.'-NIGHTLY-w5.zip');
             $out = shell_exec('curl --upload-file /var/www/html/updates/zip/'.$cm.'-'.$date.'-NIGHTLY-w5.zip https://transfer.sh/'.$cm.'-'.$date.'-NIGHTLY-w5.zip');
             $out = preg_replace('/\s+/', '', $out);
