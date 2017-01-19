@@ -1,4 +1,4 @@
 <?php
-	$conn = @mysqli_connect("localhost", "", "");
-	@mysqli_select_db($conn, "");
+	$conn = @mysqli_connect("localhost", "strona", "Pawelektoja1");
+	@mysqli_select_db($conn, "strona");
 ?>
