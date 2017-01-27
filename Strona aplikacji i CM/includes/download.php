@@ -1,4 +1,3 @@
-<script type="text/javascript">document.getElementById("cm").classList.add("active");document.getElementById("add").classList.remove("active");document.getElementById("home").classList.remove("active");</script> 
 <?php
 function showDownload($cm) {
     echo '<div class="table-responsive"><table class="table table-hover table-bordered"><tbody>';
@@ -16,7 +15,7 @@ function showDownload($cm) {
             case 3: {
                 if($cm_file==$cm) {
                     $date = substr_replace($date_org, '-', 4, 0); $date = substr_replace($date, '-', 7, 0);
-                    if($cm=="cm13"){$cm_org="cm-13.0";} else if($cm=="cm14.1"){$cm_org="cm-14.1";}else if($cm="lineage"){$cm="lineage-14.1";}
+                    if($cm=="cm13"){$cm_org="cm-13.0";}else if($cm=="lineage_14.1"){$cm_org="lineage-14.1";}
                     echo '<tr class="warning"><td><b>Data kompilacji: '.$date.'</b></td><td></td></tr><tr class="success"><td><b><i>'.$cm_org.'-'.$date_org.'-NIGHTLY-w55n.zip</i></b></td><td><a href="'.$line.'">'.$line.'</a></td></tr>'; 
                 }
                 $i++; 
@@ -24,7 +23,7 @@ function showDownload($cm) {
             }
             case 4: {
                 if($cm_file==$cm) {
-                    if($cm=="cm13"){$cm_org="cm-13.0";} else if($cm=="cm14.1"){$cm_org="cm-14.1";}else if($cm="lineage"){$cm="lineage-14.1";}
+                    if($cm=="cm13"){$cm_org="cm-13.0";} else if($cm=="cm14.1"){$cm_org="cm-14.1";}else if($cm=="lineage_14.1"){$cm_org="lineage-14.1";}
                     echo '<tr class="success"><td><b><i>'.$cm_org.'-'.$date_org.'-NIGHTLY-w55n.zip.md5</i></b></td><td><a href="'.$line.'">'.$line.'</a></td></tr>'; 
                 }
                 $i=0; 
@@ -38,13 +37,9 @@ function showDownload($cm) {
 
 $type = $_GET['type'];
 if($type=="cm13") {
-    echo '<script type="text/javascript">alerts("message", "Nightlies dla CM13 zostały wyłączone z powodu przeniesienia się na CM14.1", "info");</script>'; 
+    echo '<script type="text/javascript">alerts("message", "Nightlies dla CM13 zostały wyłączone z powodu przeniesienia się na LineageOS", "info");</script>'; 
     showDownload('cm13');
-} else if($type=="cm14") {
-    echo '<script type="text/javascript">alerts("message", "Nightlies dla CM14.1 zostały wyłączone z powodu zamknięcia projektu CM.", "info");</script>'; 
-    showDownload('cm14.1');
-} else if($type=="lineage") {
-    echo '<script type="text/javascript">alerts("message", "Nightlies dla LineageOS aktualnie jeszcze nie wystartowały", "info");</script>'; 
-    include('includes/glowna.php');
+} else if($type=="lineage_14.1") {
+    showDownload('lineage_14.1');
 }
 ?>

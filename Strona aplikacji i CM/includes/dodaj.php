@@ -78,7 +78,7 @@ $formularz = '<form action="dodaj" class="form-horizontal container" method="pos
             <select id="os" name="os" class="form-control">
                 <option value="Nie dotyczy">Nie dotyczy</option>
                 <option value="CM13">CM13</option>
-                <option value="CM14.1">CM14.1</option>
+                <option value="LineageOS 14.1">LineageOS 14.1</option>
             </select>
         </div>
     </div>

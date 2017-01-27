@@ -10,6 +10,6 @@ RewriteRule dodaj index.php?action=dodaj
 RewriteRule bledy index.php?action=bledy
 RewriteRule pobierz/cm13 index.php?action=download&type=cm13
 RewriteRule pobierz/cm14 index.php?action=download&type=cm14
-RewriteRule pobierz/lineage index.php?action=download&type=lineage
+RewriteRule pobierz/lineageos_14.1 index.php?action=download&type=lineage_14.1
 
 AddHandler application/x-httpd-php55 .php #wersja_php_generowane_automatycznie

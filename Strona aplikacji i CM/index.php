@@ -1,14 +1,24 @@
 <html lang="pl_PL">
     <head>
         <meta charset="utf-8">
-        <title>Strona apikacji i Rom'u dla LG L65</title>
+        <title>Strona apikacji i Romu dla LG L65</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        
         <script src="/js/main.js"></script>
-        <style type="text/css">
-            body {
-                background-image: url(/img/tlo.png); //from http://subtlepatterns.com
+        <style>
+            .demo-layout-transparent {
+              background: url('/img/tlo.png');
+            }
+            .demo-layout-transparent .mdl-layout__header,
+            .demo-layout-transparent .mdl-layout__drawer-button {
+              color: black;
             }
         </style>
         <script> //Google Analytics
@@ -26,42 +36,32 @@
     <body>
         <?php 
             include 'mysql.php';
-            $navbar = '<nav class="navbar navbar-default" role="navigation">
-                      <div class="container-fluid">
-                        <div class="navbar-header">
-                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                            <span class="sr-only">Rozwiń nawigację</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                          </button>
-                        </div>
-
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav navbar-nav navbar-left">
-                                <li class="active" id="home"><a href="/"><b>Strona Główna</b></a></li>
-                                <li id="bledy"><a href="bledy"><b>Lista Błędów</b></a></li>
-                                <li id="add"><a href="dodaj" ><b>Dodaj błąd lub propozycję</b></a></li>
-                                <li id="cm" class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Pobierz ROM</b><span class="caret"></span></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="/pobierz/cm13">CM13</a></li>
-                                        <li><a href="/pobierz/cm14">CM14.1</a></li>
-                                        <li><a href="/pobierz/lineageos">Lineage OS</a></li>
+        
+        
+            $navbar = '<div class="demo-layout-transparent mdl-layout mdl-js-layout">
+                          <header class="mdl-layout__header mdl-layout__header--transparent mdl-layout__header--scroll">
+                            <div class="mdl-layout__header-row">
+                              <span class="mdl-layout-title">Strona apikacji i Romu dla LG L65</span>
+                              <div class="mdl-layout-spacer"></div>
+                            </div>
+                          </header>
+                          <div class="mdl-layout__drawer">
+                            <nav class="mdl-navigation">
+                                <a class="mdl-navigation__link active" href="/">Strona Główna</a>
+                                <a class="mdl-navigation__link" href="bledy">Lista Błędów</a>
+                                <a class="mdl-navigation__link" href="dodaj">Dodaj błąd lub propozycję</a>
+                                <li class="mdl-navigation__link">Pobierz ROM
+                                    <ul class="mdl-navigation__link">
+                                        <li><a style="color: #757575;" href="/pobierz/cm13">CM13</a></li>
+                                        <li><a style="color: #757575;" href="/pobierz/lineageos_14.1">Lineage OS</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="https://github.com/dom133/Updater-Android"><b>Github</b></a></li>
-                                <li><a href="http://app-updater.pl:8080"><b>Jenkins</b></a></li>
-                            </ul>
-                            <ul class="nav navbar-nav navbar-right">
-                                <div id="login_form">
-                                </div>
-                            </ul>
-                        </div><!-- /.navbar-collapse -->
-                      </div><!-- /.container-fluid -->
-                    </nav>   
-
-                    <div id="message" style="margin-top:10px; margin-left:30px; margin-right:30px;"></div>';
+                                <a class="mdl-navigation__link" href="https://github.com/dom133/Updater-Android">Github</a>
+                                <a class="mdl-navigation__link" href="http://app-updater.pl:8080">Jenkins</a>
+                            </nav>
+                          </div>
+                          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Zamknij</span></button><h4 class="modal-title" id="ModalTitle"></h4></div><div class="modal-body" id="ModalContent"><p></p></div><div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button></div></div></div></div>
+                          <main class="mdl-layout__content"> <div id="message" style="margin-top:10px; margin-left:30px; margin-right:30px;"></div>';
             
             if($conn) {
                 echo $navbar;
@@ -102,9 +102,10 @@
                         break;
                     }
                 }
+                echo '</main></div>';
             } else {
                 echo '<h3 style="text-align:center; padding: 70px 0;"><b>Nie można połączyć się z bazą danych. Jeśli problem będzie się powtarzał skontaktuj się z administratorem</b></h3>';
-            }
+            }          
         ?> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
