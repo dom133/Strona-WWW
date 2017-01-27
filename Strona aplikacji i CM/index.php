@@ -14,7 +14,7 @@
         <script src="/js/main.js"></script>
         <style>
             .demo-layout-transparent {
-              background: url('/img/tlo.png');
+              background: url('/img/tlo.png'); //from http://subtlepatterns.com
             }
             .demo-layout-transparent .mdl-layout__header,
             .demo-layout-transparent .mdl-layout__drawer-button {
