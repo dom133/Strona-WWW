@@ -38,8 +38,10 @@ function showDownload($cm) {
 $type = $_GET['type'];
 if($type=="cm13") {
     echo '<script type="text/javascript">alerts("message", "Nightlies dla CM13 zostały wyłączone z powodu przeniesienia się na LineageOS", "info");</script>'; 
+    echo '<button style="margin-bottom: 10px;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn-block" onclick="window.location.replace(\'http://opengapps.org/\');">Gapps</button>';
     showDownload('cm13');
 } else if($type=="lineage_14.1") {
+    echo '<button style="margin-bottom: 10px;" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored btn-block" onclick="window.location.replace(\'http://opengapps.org/\');">Gapps</button>';
     showDownload('lineage_14.1');
 }
 ?>
